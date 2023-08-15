@@ -24,7 +24,7 @@ const App = () => {
   const [gameOver, setGameOver] = useState(false);
 
   const handleBoxClick = (boxIdx) => {
-    // Step 1: Update the board
+
     const updatedBoard = board.map((value, idx) => {
       if (idx === boxIdx) {
         return xPlaying ? "X" : "O";
@@ -34,8 +34,7 @@ const App = () => {
     })
 
     setBoard(updatedBoard);
-
-    // Step 2: Check if either player has won the game
+    
     const winner = checkWinner(updatedBoard);
 
     if (winner) {
@@ -50,7 +49,6 @@ const App = () => {
       }
     }
 
-    // Step 3: Change active player
     setXPlaying(!xPlaying);
   }
 
@@ -58,7 +56,6 @@ const App = () => {
     for (let i = 0; i < WIN_CONDITIONS.length; i++) {
       const [x, y, z] = WIN_CONDITIONS[i];
 
-      // Iterate through win conditions and check if either player satisfies them
       if (board[x] && board[x] === board[y] && board[y] === board[z]) {
         setGameOver(true);
         return board[x];
