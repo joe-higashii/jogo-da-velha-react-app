@@ -1,9 +1,11 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background-color: #efefef;
+  background: linear-gradient(to bottom, #6ab7f5, #fff);
   font-family: "Fredoka", sans-serif;
+  min-height: 100vh;
 }
